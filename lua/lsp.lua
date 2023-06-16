@@ -1,4 +1,13 @@
-require("mason").setup()
+require("mason").setup({
+    ui = {
+        icons = {
+            package_installed = "✓",
+            package_pending = "➜",
+            package_uninstalled = "✗"
+        }
+    }
+})
+
 require("mason-lspconfig").setup({
     ensure_installed = {
         "lua_ls",
@@ -14,7 +23,7 @@ require("neodev").setup()
 --require("fidget").setup()
 
 -- Set up cool signs for diagnostics
-local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+local signs = { Error = " ", Warn = "⚠ ", Hint = " ", Info = " " }
 for type, icon in pairs(signs) do
     local hl = "DiagnosticSign" .. type
     vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
@@ -79,7 +88,7 @@ require("lspconfig")["lua_ls"].setup({
 })
 
 -- Python
-require("lspconfig")["pylsp"].setup({
+require("lspconfig")["pyright"].setup({
     on_attach = on_attach,
     capabilities = capabilities,
     settings = {
