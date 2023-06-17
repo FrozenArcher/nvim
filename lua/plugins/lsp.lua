@@ -1,5 +1,4 @@
 -- plugins.lsp: lspconfig, mason
--- LSP Configuration & Plugins
 return {
 	{
 		"neovim/nvim-lspconfig",
@@ -118,4 +117,3 @@ return {
 		end,
 	},
 }
-

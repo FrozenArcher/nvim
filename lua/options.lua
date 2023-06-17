@@ -8,8 +8,8 @@ local opts = {
 	termguicolors = true,
 	number = true,
 	relativenumber = true,
-    cursorline = true,
-    signcolumn = "yes",
+	cursorline = true,
+	signcolumn = "yes",
 }
 
 for opt, val in pairs(opts) do
