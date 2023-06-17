@@ -4,8 +4,8 @@ M.map = function(mode, lhs, rhs, desc)
 	vim.keymap.set(mode, lhs, rhs, { silent = true, desc = desc })
 end
 
-M.nmap = function(key, action, desc)
-	M.map("n", key, action, desc)
+M.nmap = function(key, action)
+	M.map("n", key, action, action)
 end
 
 M.lsp_map = function(lhs, rhs, bufnr, desc)

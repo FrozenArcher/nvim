@@ -4,12 +4,12 @@ return {
 		"nvim-lualine/lualine.nvim",
 		dependencies = {
 			"nvim-tree/nvim-web-devicons",
-		    "SmiteshP/nvim-navic",
+			"SmiteshP/nvim-navic",
 		},
 		config = function()
-            local navic_location = function ()
-                return require("nvim-navic").get_location()
-            end
+			local navic_location = function()
+				return require("nvim-navic").get_location()
+			end
 			require("lualine").setup({
 				options = {
 					icons_enabled = true,
@@ -39,7 +39,7 @@ return {
 					lualine_a = { { "mode", separator = { left = "" }, right_padding = 2 } },
 					lualine_b = { "filename", "branch", "diff" },
 					lualine_c = { navic_location },
-					lualine_x = { "diagnostics"  },
+					lualine_x = { "diagnostics" },
 					lualine_y = { "fileformat", "filetype", "encoding", "progress" },
 					lualine_z = { { "location", separator = { right = "" }, left_padding = 2 } },
 				},

@@ -27,4 +27,4 @@ require("utils.keys").set_leader("<20>")
 lazy.setup("plugins")
 
 -- key binding for lazy
-require("utils.keys").nmap("<A-L>", lazy.show, "Show Lazy")
+require("utils.keys").nmap("<A-L>", lazy.show)

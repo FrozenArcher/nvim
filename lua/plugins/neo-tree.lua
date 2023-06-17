@@ -3,7 +3,7 @@
 -- mappings for neo-tree
 local set_mappings = function()
 	local nmap = require("utils.keys").nmap
-	nmap("<A-n>", ":NeoTreeFocus<cr>", "Focus on NeoTree")
+	nmap("<A-n>", ":NeoTreeFocus<cr>")
 end
 
 local config = {

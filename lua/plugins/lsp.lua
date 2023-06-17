@@ -33,7 +33,7 @@ return {
 			})
 
 			-- Quick access via keymap
-			require("utils.keys").nmap("<A-m>", "<cmd>Mason<cr>", "Show Mason")
+			require("utils.keys").nmap("<A-m>", "<cmd>Mason<cr>")
 
 			-- Neodev setup before LSP config
 			--require("neodev").setup()
@@ -46,9 +46,9 @@ return {
 				separator = " > ",
 				depth_limit = 3,
 				depth_limit_indicator = "..",
-                lsp = {
-                    auto_attach = true,
-                },
+				lsp = {
+					auto_attach = true,
+				},
 			})
 
 			-- Set up cool signs for diagnostics
