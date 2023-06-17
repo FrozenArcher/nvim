@@ -2,22 +2,23 @@
 
 return {
 	{
+		"windwp/nvim-autopairs",
+		event = "InsertEnter",
+		opts = {
+			enable_check_bracket_line = false,
+		},
+	},
+	{
 		"NvChad/nvim-colorizer.lua",
-		config = function()
-			require("colorizer").setup()
-		end,
+		opts = {},
 	},
 	{
 		"luukvbaal/statuscol.nvim",
-		config = function()
-			require("statuscol").setup()
-		end,
+		opts = {},
 	},
 	{
 		"ecthelionvi/NeoColumn.nvim",
-		config = function()
-			require("NeoColumn").setup()
-		end,
+		opts = {},
 	},
 	{
 		-- attach to lsp server
