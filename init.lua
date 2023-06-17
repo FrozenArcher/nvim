@@ -1,6 +1,5 @@
 -- Neovim Configuration
 -- FrozenArcher
 
+require("lazy-setup")
 require("options")
-require("plugins")
-require("lsp")
