@@ -1,4 +1,11 @@
 -- plugins.neo-tree: file explorer plugin
+
+-- mappings for neo-tree
+local set_mappings = function()
+	local nmap = require("utils.keys").nmap
+	nmap("<A-n>", ":NeoTreeFocus<cr>", "Focus on NeoTree")
+end
+
 local config = {
 	-- If a user has a sources list it will replace this one.
 	-- Only sources listed here will be loaded.
@@ -8,7 +15,7 @@ local config = {
 		"filesystem",
 		"buffers",
 		"git_status",
-		-- "document_symbols",
+		"document_symbols",
 	},
 	add_blank_line_at_top = false, -- Add a blank line at the top of the tree.
 	auto_clean_after_session_restore = false, -- Automatically clean up broken neo-tree buffers saved in sessions
@@ -626,5 +633,6 @@ return {
 	config = function()
 		vim.g.neo_tree_remove_legacy_commands = 1
 		require("neo-tree").setup(config)
+		set_mappings()
 	end,
 }
