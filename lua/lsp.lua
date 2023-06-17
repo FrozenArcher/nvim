@@ -11,13 +11,16 @@ require("mason").setup({
 require("mason-lspconfig").setup({
     ensure_installed = {
         "lua_ls",
-        "pylsp",
+        "pyright",
+        "clangd",
+        "rust_analyzer",
+        "gopls",
     },
     automatic_installation = true,
 })
 
 -- Neodev setup before LSP config
-require("neodev").setup()
+-- require("neodev").setup()
 
 -- Turn on LSP status information
 --require("fidget").setup()
@@ -35,7 +38,7 @@ local config = {
     signs = {
         active = signs,
     },
-    update_in_insert = true,
+    update_in_insert = false,
     underline = true,
     severity_sort = true,
     float = {
@@ -57,7 +60,7 @@ local on_attach = function(client, bufnr)
     end, { desc = "Format current buffer with LSP" })
 
     -- Attach and configure vim-illuminate
-    require("illuminate").on_attach(client)
+    -- require("illuminate").on_attach(client)
 end
 
 

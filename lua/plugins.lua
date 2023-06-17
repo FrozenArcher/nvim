@@ -52,9 +52,9 @@ require("lazy").setup({
         dependencies = {
             "williamboman/mason.nvim",
             "williamboman/mason-lspconfig.nvim",
-            "j-hui/fidget.nvim",
-            "folke/neodev.nvim",
-            "RRethy/vim-illuminate",
+            -- "j-hui/fidget.nvim",
+            -- "folke/neodev.nvim",
+            -- "RRethy/vim-illuminate",
             "hrsh7th/cmp-nvim-lsp",
         },
     },
@@ -63,6 +63,7 @@ require("lazy").setup({
     {
         "nvim-neo-tree/neo-tree.nvim",
         branch = "v2.x",
+        lazy = false;
         dependencies = {
             "nvim-lua/plenary.nvim",
             "nvim-tree/nvim-web-devicons",

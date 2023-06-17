@@ -7,7 +7,7 @@ local config = {
         "filesystem",
         "buffers",
         "git_status",
-        -- "document_symbols",
+        "document_symbols",
     },
     add_blank_line_at_top = false,            -- Add a blank line at the top of the tree.
     auto_clean_after_session_restore = false, -- Automatically clean up broken neo-tree buffers saved in sessions
@@ -164,7 +164,7 @@ local config = {
     default_component_configs = {
         container = {
             enable_character_fade = true,
-            width = "100%",
+            width = "80%",
             right_padding = 0,
         },
         --diagnostics = {
