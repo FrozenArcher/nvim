@@ -21,14 +21,6 @@ return {
 		opts = {},
 	},
 	{
-		-- attach to lsp server
-		-- start in lsp.lua
-		"SmiteshP/nvim-navic",
-		dependencies = {
-			"neovim/nvim-lspconfig",
-		},
-	},
-	{
 		"lewis6991/gitsigns.nvim",
 		opts = {},
 	},
