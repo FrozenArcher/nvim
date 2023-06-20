@@ -35,5 +35,15 @@ return {
         config = function()
             require("utils.keys").nmap("<leader>xx", "<cmd>TroubleToggle<cr>")
         end
-    }
+    },
+    {
+        'TimUntersberger/neogit',
+        dependencies = 'nvim-lua/plenary.nvim',
+        opts = {},
+        config = function()
+            require("utils.keys").nmap("<leader>G", function()
+                require("neogit").open()
+            end)
+        end
+    },
 }
