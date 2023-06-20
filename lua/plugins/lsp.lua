@@ -42,9 +42,6 @@ return {
                 },
                 delay = 100,
             })
-            vim.cmd("hi def IlluminatedWordText gui=underline")
-            vim.cmd("hi def IlluminatedWordRead gui=underline")
-            vim.cmd("hi def IlluminatedWordWrite gui=underline")
 
             -- Quick access via keymap
             require("utils.keys").nmap("<leader>m", "<cmd>Mason<cr>")
@@ -85,7 +82,7 @@ return {
             -- This function gets run when an LSP connects to a particular buffer.
             local on_attach = function(client, bufnr)
                 require("lsp-format").on_attach(client)
-                require("illuminate").on_attach(client)
+                --require("illuminate").on_attach(client)
             end
 
             -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
