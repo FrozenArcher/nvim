@@ -24,6 +24,9 @@ return {
 				f = {
 					name = "Telescope find",
 				},
+				c = {
+					name = "Close...",
+				},
 			},
 		})
 	end,

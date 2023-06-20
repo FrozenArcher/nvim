@@ -6,3 +6,6 @@ require("lazy-setup")
 
 -- set vim options
 require("options")
+
+-- basic keymap
+require("keymap")

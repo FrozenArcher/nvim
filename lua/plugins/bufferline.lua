@@ -5,11 +5,12 @@ return {
 		version = "*",
 		dependencies = "nvim-tree/nvim-web-devicons",
 		config = function()
+			local bufferline = require("bufferline")
 			local nmap = require("utils.keys").nmap
+
 			nmap("<A-j>", ":BufferLineCycleNext<cr>", "Cycle to next buffer")
 			nmap("<A-k>", ":BufferLineCyclePrev<cr>", "Cycle to previous buffer")
 
-			local bufferline = require("bufferline")
 			bufferline.setup({
 				options = {
 					mode = "buffers", -- set to "tabs" to only show tabpages instead
