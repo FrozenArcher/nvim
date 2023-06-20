@@ -65,7 +65,7 @@ return {
 		map("n", "]e", "<cmd>Lspsaga diagnostic_jump_next<CR>")
 
 		-- Diagnostic jump with filters such as only jumping to an error
-	    map("n", "[E", function()
+		map("n", "[E", function()
 			require("lspsaga.diagnostic"):goto_prev({ severity = vim.diagnostic.severity.ERROR })
 		end)
 		map("n", "]E", function()

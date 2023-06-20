@@ -23,9 +23,9 @@ return {
 				"lua",
 				"vim",
 
-                -- required by lspsaga
-                "markdown",
-                "markdown_inline",
+				-- required by lspsaga
+				"markdown",
+				"markdown_inline",
 			},
 			highlight = {
 				enable = true,
