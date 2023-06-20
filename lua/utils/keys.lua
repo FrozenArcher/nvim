@@ -1,15 +1,15 @@
 local M = {}
 
-M.map = function(mode, lhs, rhs)
-	vim.keymap.set(mode, lhs, rhs, { silent = true })
+M.map = function(mode, lhs, rhs, desc)
+	vim.keymap.set(mode, lhs, rhs, { silent = true, desc = desc })
 end
 
-M.nmap = function(key, action)
-	M.map("n", key, action)
+M.nmap = function(key, action, desc)
+	M.map("n", key, action, desc)
 end
 
-M.lsp_map = function(lhs, rhs, bufnr)
-	vim.keymap.set("n", lhs, rhs, { silent = true, buffer = bufnr })
+M.lsp_map = function(lhs, rhs, bufnr, desc)
+	vim.keymap.set("n", lhs, rhs, { silent = true, buffer = bufnr, desc })
 end
 
 M.dap_map = function(mode, lhs, rhs)
@@ -20,7 +20,6 @@ M.set_leader = function(key)
 	vim.g.mapleader = key
 	vim.g.maplocalleader = key
 	M.map({ "n", "v" }, key, "<nop>")
-	-- M.map({ "n", "v" }, "<leader>L", ':echo "leader pressed"<cr>')
 end
 
 return M

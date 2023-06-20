@@ -33,7 +33,7 @@ return {
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 		opts = {},
 		config = function()
-			require("utils.keys").nmap("<leader>xx", "<cmd>TroubleToggle<cr>")
+			require("utils.keys").nmap("<leader>wx", "<cmd>TroubleToggle<cr>", "Open Trouble window")
 		end,
 	},
 	{
@@ -41,9 +41,9 @@ return {
 		dependencies = "nvim-lua/plenary.nvim",
 		opts = {},
 		config = function()
-			require("utils.keys").nmap("<leader>G", function()
+			require("utils.keys").nmap("<leader>wg", function()
 				require("neogit").open()
-			end)
+			end, "Open neogit window")
 		end,
 	},
 	{

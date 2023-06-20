@@ -6,8 +6,8 @@ return {
 		dependencies = "nvim-tree/nvim-web-devicons",
 		config = function()
 			local nmap = require("utils.keys").nmap
-			nmap("<A-j>", ":BufferLineCycleNext<cr>")
-			nmap("<A-k>", ":BufferLineCyclePrev<cr>")
+			nmap("<A-j>", ":BufferLineCycleNext<cr>", "Cycle to next buffer")
+			nmap("<A-k>", ":BufferLineCyclePrev<cr>", "Cycle to previous buffer")
 
 			local bufferline = require("bufferline")
 			bufferline.setup({

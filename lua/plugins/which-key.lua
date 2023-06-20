@@ -1,0 +1,27 @@
+-- plugins.which-key: key binding manager
+return {
+	"folke/which-key.nvim",
+	event = "VeryLazy",
+	init = function()
+		vim.o.timeout = true
+		vim.o.timeoutlen = 300
+	end,
+	config = function()
+		local wk = require("which-key")
+		wk.setup()
+		wk.register({
+			["<leader>"] = {
+				l = {
+					name = "LSP Actions",
+					r = "Rename",
+				},
+				s = {
+					name = "Show diagnostics",
+				},
+				w = {
+					name = "Open UI Window",
+				},
+			},
+		})
+	end,
+}

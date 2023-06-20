@@ -3,7 +3,7 @@
 -- mappings for neo-tree
 local set_mappings = function()
 	local nmap = require("utils.keys").nmap
-	nmap("<leader>f", ":NeoTreeFocus<cr>")
+	nmap("<leader>a", "<cmd>NeoTreeFocus<cr>", "Fucus on NeoTree")
 end
 
 local config = {
@@ -258,7 +258,13 @@ local config = {
 					--   highlight = "NeoTreeSymbolicLinkTarget",
 					-- },
 					{ "clipboard", zindex = 10 },
-					{ "diagnostics", errors_only = true, zindex = 20, align = "right", hide_when_expanded = true },
+					{
+						"diagnostics",
+						errors_only = true,
+						zindex = 20,
+						align = "right",
+						hide_when_expanded = true,
+					},
 					{ "git_status", zindex = 20, align = "right", hide_when_expanded = true },
 				},
 			},

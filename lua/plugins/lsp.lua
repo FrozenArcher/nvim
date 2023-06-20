@@ -5,7 +5,6 @@ return {
 		dependencies = {
 			"williamboman/mason.nvim",
 			"williamboman/mason-lspconfig.nvim",
-			--"j-hui/fidget.nvim",
 			{ "folke/neodev.nvim", opts = {} },
 			"RRethy/vim-illuminate",
 			"hrsh7th/cmp-nvim-lsp",
@@ -44,10 +43,7 @@ return {
 			})
 
 			-- Quick access via keymap
-			require("utils.keys").nmap("<leader>m", "<cmd>Mason<cr>")
-
-			-- Turn on LSP status information
-			--require("fidget").setup()
+			require("utils.keys").nmap("<leader>wm", "<cmd>Mason<cr>", "Open Mason window")
 
 			-- Set up lsp-format
 			require("lsp-format").setup({})
