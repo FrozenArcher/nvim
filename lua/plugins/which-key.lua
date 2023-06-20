@@ -21,6 +21,9 @@ return {
 				w = {
 					name = "Open UI Window",
 				},
+				f = {
+					name = "Telescope find",
+				},
 			},
 		})
 	end,
