@@ -21,10 +21,10 @@ if not ok then
 end
 
 -- We have to set the leader key here for lazy.nvim to work
-require("utils.keys").set_leader("<20>")
+require("utils.keys").set_leader(",")
 
 -- Load plugins from specifications
 lazy.setup("plugins")
 
 -- key binding for lazy
-require("utils.keys").nmap("<A-L>", lazy.show)
+require("utils.keys").nmap("<leader>l", lazy.show)

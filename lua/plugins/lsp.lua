@@ -6,8 +6,8 @@ return {
 			"williamboman/mason.nvim",
 			"williamboman/mason-lspconfig.nvim",
 			--"j-hui/fidget.nvim",
-			--"folke/neodev.nvim",
-			--"RRethy/vim-illuminate",
+            { "folke/neodev.nvim", opts = {} },
+			"RRethy/vim-illuminate",
 			"hrsh7th/cmp-nvim-lsp",
 		},
 		config = function()
@@ -32,11 +32,21 @@ return {
 				automatic_installation = true,
 			})
 
-			-- Quick access via keymap
-			require("utils.keys").nmap("<A-m>", "<cmd>Mason<cr>")
+            -- vim-illuminate
+            require("illuminate").configure({
+                 providers = {
+                    'lsp',
+                    'treesitter',
+                    'regex',
+                },
+                delay = 100,
+            })
+            vim.cmd("hi def IlluminatedWordText gui=underline")
+            vim.cmd("hi def IlluminatedWordRead gui=underline")
+            vim.cmd("hi def IlluminatedWordWrite gui=underline")
 
-			-- Neodev setup before LSP config
-			--require("neodev").setup()
+			-- Quick access via keymap
+			require("utils.keys").nmap("<leader>m", "<cmd>Mason<cr>")
 
 			-- Turn on LSP status information
 			--require("fidget").setup()
@@ -82,10 +92,10 @@ return {
 			local on_attach = function(client, bufnr)
 				local lsp_map = require("helpers.keys").lsp_map
 
-				lsp_map("<leader>lr", vim.lsp.buf.rename, bufnr, "Rename symbol")
-				lsp_map("<leader>la", vim.lsp.buf.code_action, bufnr, "Code action")
-				lsp_map("<leader>ld", vim.lsp.buf.type_definition, bufnr, "Type definition")
-				lsp_map("<leader>ls", require("telescope.builtin").lsp_document_symbols, bufnr, "Document symbols")
+				lsp_map("<leader>cr", vim.lsp.buf.rename, bufnr, "Rename symbol")
+				lsp_map("<leader>ca", vim.lsp.buf.code_action, bufnr, "Code action")
+				lsp_map("<leader>cd", vim.lsp.buf.type_definition, bufnr, "Type definition")
+				lsp_map("<leader>cs", require("telescope.builtin").lsp_document_symbols, bufnr, "Document symbols")
 
 				lsp_map("gd", vim.lsp.buf.definition, bufnr, "Goto Definition")
 				lsp_map("gr", require("telescope.builtin").lsp_references, bufnr, "Goto References")
@@ -101,7 +111,7 @@ return {
 				lsp_map("<leader>ff", "<cmd>Format<cr>", bufnr, "Format")
 
 				-- Attach and configure vim-illuminate
-				--require("illuminate").on_attach(client)
+				require("illuminate").on_attach(client)
 			end
 
 			-- nvim-cmp supports additional completion capabilities, so broadcast that to servers
