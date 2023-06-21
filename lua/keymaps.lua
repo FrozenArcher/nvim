@@ -50,6 +50,23 @@ nmap("<leader>ff", builtin.find_files, "Find file")
 nmap("<leader>fg", builtin.live_grep, "Live grep")
 nmap("<leader>fb", builtin.buffers, "Find buffer")
 nmap("<leader>fh", builtin.help_tags, "Help tags")
+nmap("<leader>fp", function()
+	require("telescope").extensions.projects.projects({})
+end, "Find projects")
+-- Spectre
+local spectre = require("spectre")
+nmap("<leader>ss", function()
+	spectre.open()
+end, "Open spectre")
+nmap("<leader>sw", function()
+	spectre.open_visual({ select_word = true })
+end, "Search current word")
+map("v", "<leader>sw", function()
+	spectre.open_visual()
+end, "Search current word")
+nmap("<leader>sp", function()
+	spectre.open_file_search({ select_word = true })
+end, "Search on current file")
 
 ----------------------
 -- LSP code actions --
@@ -84,13 +101,13 @@ map("n", "gt", "<cmd>Lspsaga goto_type_definition<CR>")
 -- Show line diagnostics
 -- You can pass argument ++unfocus to
 -- unfocus the show_line_diagnostics floating window
-map("n", "<leader>sl", "<cmd>Lspsaga show_line_diagnostics<CR>", "Show diagnostics of current line")
+map("n", "<leader>dl", "<cmd>Lspsaga show_line_diagnostics<CR>", "Show diagnostics of current line")
 -- Show buffer diagnostics
-map("n", "<leader>sb", "<cmd>Lspsaga show_buf_diagnostics<CR>", "Show diagnostics of current buffer")
+map("n", "<leader>db", "<cmd>Lspsaga show_buf_diagnostics<CR>", "Show diagnostics of current buffer")
 -- Show workspace diagnostics
-map("n", "<leader>sw", "<cmd>Lspsaga show_workspace_diagnostics<CR>", "Show diagnostics in current workspace")
+map("n", "<leader>dw", "<cmd>Lspsaga show_workspace_diagnostics<CR>", "Show diagnostics in current workspace")
 -- Show cursor diagnostics
-map("n", "<leader>sc", "<cmd>Lspsaga show_cursor_diagnostics<CR>", "Show diagnostics under cursor")
+map("n", "<leader>dc", "<cmd>Lspsaga show_cursor_diagnostics<CR>", "Show diagnostics under cursor")
 -- Diagnostic jump
 -- You can use <C-o> to jump back to your previous location
 map("n", "[e", "<cmd>Lspsaga diagnostic_jump_prev<CR>", "Goto previous diagnostic")

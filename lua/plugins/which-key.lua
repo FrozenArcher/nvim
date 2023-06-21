@@ -15,7 +15,7 @@ return {
 					name = "LSP Actions",
 					r = "Rename",
 				},
-				s = {
+				d = {
 					name = "Show diagnostics",
 				},
 				w = {
@@ -26,6 +26,9 @@ return {
 				},
 				c = {
 					name = "Close...",
+				},
+				s = {
+					name = "Spectre search",
 				},
 			},
 		})
