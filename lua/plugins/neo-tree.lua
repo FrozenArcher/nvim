@@ -1,11 +1,5 @@
 -- plugins.neo-tree: file explorer plugin
 
--- mappings for neo-tree
-local set_mappings = function()
-	local nmap = require("utils.keys").nmap
-	nmap("<leader>a", "<cmd>NeoTreeFocus<cr>", "Fucus on NeoTree")
-end
-
 local config = {
 	-- If a user has a sources list it will replace this one.
 	-- Only sources listed here will be loaded.
@@ -639,6 +633,5 @@ return {
 	config = function()
 		vim.g.neo_tree_remove_legacy_commands = 1
 		require("neo-tree").setup(config)
-		set_mappings()
 	end,
 }

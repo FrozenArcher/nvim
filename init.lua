@@ -8,4 +8,4 @@ require("lazy-setup")
 require("options")
 
 -- basic keymap
-require("keymap")
+require("keymaps")

@@ -25,8 +25,3 @@ require("utils.keys").set_leader(",")
 
 -- Load plugins from specifications
 lazy.setup("plugins")
-
--- key binding for lazy
-require("utils.keys").nmap("<leader>wl", function()
-	lazy.show()
-end, "Open Lazy.nvim window")

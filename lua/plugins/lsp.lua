@@ -5,10 +5,24 @@ return {
 		dependencies = {
 			"williamboman/mason.nvim",
 			"williamboman/mason-lspconfig.nvim",
-			{ "folke/neodev.nvim", opts = {} },
+			{
+				"folke/neodev.nvim",
+				opts = {},
+			},
 			"RRethy/vim-illuminate",
 			"hrsh7th/cmp-nvim-lsp",
 			"lukas-reineke/lsp-format.nvim",
+			{
+				"glepnir/lspsaga.nvim",
+
+				event = "LspAttach",
+				dependencies = {
+					{ "nvim-tree/nvim-web-devicons" },
+					--Please make sure you install markdown and markdown_inline parser
+					{ "nvim-treesitter/nvim-treesitter" },
+				},
+				opts = {},
+			},
 		},
 		config = function()
 			-- Set up Mason before anything else
@@ -41,9 +55,6 @@ return {
 				},
 				delay = 100,
 			})
-
-			-- Quick access via keymap
-			require("utils.keys").nmap("<leader>wm", "<cmd>Mason<cr>", "Open Mason window")
 
 			-- Set up lsp-format
 			require("lsp-format").setup({})

@@ -2,6 +2,19 @@
 
 return {
 	{
+		"kazhala/close-buffers.nvim",
+		opts = {
+			preserve_window_layout = { "this" },
+			next_buffer_cmd = function(windows)
+				require("bufferline").cycle(1)
+				local bufnr = vim.api.nvim_get_current_buf()
+				for _, window in ipairs(windows) do
+					vim.api.nvim_win_set_buf(window, bufnr)
+				end
+			end,
+		},
+	},
+	{
 		"windwp/nvim-autopairs",
 		event = "InsertEnter",
 		opts = {
@@ -32,19 +45,11 @@ return {
 		"folke/trouble.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 		opts = {},
-		config = function()
-			require("utils.keys").nmap("<leader>wx", "<cmd>TroubleToggle<cr>", "Open Trouble window")
-		end,
 	},
 	{
 		"TimUntersberger/neogit",
 		dependencies = "nvim-lua/plenary.nvim",
 		opts = {},
-		config = function()
-			require("utils.keys").nmap("<leader>wg", function()
-				require("neogit").open()
-			end, "Open neogit window")
-		end,
 	},
 	{
 		"f-person/git-blame.nvim",

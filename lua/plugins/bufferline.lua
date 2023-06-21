@@ -3,13 +3,12 @@ return {
 	{
 		"akinsho/bufferline.nvim",
 		version = "*",
-		dependencies = "nvim-tree/nvim-web-devicons",
+		dependencies = {
+			"nvim-tree/nvim-web-devicons",
+			"kazhala/close-buffers.nvim",
+		},
 		config = function()
 			local bufferline = require("bufferline")
-			local nmap = require("utils.keys").nmap
-
-			nmap("<A-j>", ":BufferLineCycleNext<cr>", "Cycle to next buffer")
-			nmap("<A-k>", ":BufferLineCyclePrev<cr>", "Cycle to previous buffer")
 
 			bufferline.setup({
 				options = {
