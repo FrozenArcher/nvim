@@ -5,5 +5,5 @@ Neovim configuration
 ## Dependencies
 
 ```bash
-paru -S npm go fd ripgrep
+paru -S npm go fd ripgrep sed
 ```
