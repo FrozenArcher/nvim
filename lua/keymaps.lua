@@ -26,6 +26,12 @@ map("n", "<leader>wo", "<cmd>Lspsaga outline<CR>", "Open Lspsaga outline window"
 -------------
 -- Plugins --
 -------------
+-- Hop
+nmap("fc", "<cmd>HopChar1<cr>", "Hop 1 char")
+nmap("fC", "<cmd>HopChar2<cr>", "Hop 2 chars")
+nmap("fw", "<cmd>HopWord<cr>", "Hop word")
+nmap("fl", "<cmd>HopLine<cr>", "Hop line")
+nmap("fp", "<cmd>HopPattern<cr>", "Hop pattern")
 -- NeoTree
 nmap("<leader>a", "<cmd>NeoTreeFocus<cr>", "Fucus on NeoTree")
 -- Bufferline

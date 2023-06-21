@@ -31,6 +31,9 @@ return {
 					name = "Spectre search",
 				},
 			},
+			["f"] = {
+				name = "Hop actions",
+			},
 		})
 	end,
 }
