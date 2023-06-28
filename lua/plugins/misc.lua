@@ -2,6 +2,12 @@
 
 return {
 	{
+		"gpanders/nvim-parinfer",
+	},
+	{
+		"elkowar/yuck.vim",
+	},
+	{
 		"phaazon/hop.nvim",
 		branch = "v2",
 		opts = {},
